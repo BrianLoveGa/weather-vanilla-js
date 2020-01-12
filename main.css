@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "montserrat", sans-serif;
+  background-color: rgb(189, 184, 184);
+}
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(100, 0, 20, 0.61),
+    rgba(199, 0, 40, 0.767),
+    rgba(240, 0, 80, 0.9)
+  );
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+header input {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  border-bottom: 5px solid #df8e00;
+  color: #313131;
+  font-size: 1.5em;
+  transition: 0.2s ease-out;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+main {
+  flex: 1 1 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  color: rgb(255, 255, 255);
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.location .date {
+  color: whitesmoke;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.current .temp {
+  color: skyblue;
+  font-size: 7em;
+  text-shadow: 4px 10px rgba(0, 0, 0, 0.7);
+  margin: 30px 0px;
+}
+
+.current .temp span {
+  font-weight: 500;
+}
+
+.current .weather,
+.current .hi-low {
+  color: #fff;
+  font-size: 4em;
+
+  margin-bottom: 15px;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+}
+.current .weather {
+  font-style: italic;
+}
