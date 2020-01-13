@@ -90,3 +90,15 @@ main {
 .current .weather {
   font-style: italic;
 }
+
+
+
+.click{
+    width:28%;
+    text-align: center;
+    padding: 10px;
+    align-self: center;
+    border-radius: 10px;
+    margin:10px auto;
+    font-size: 1.1em;
+}
