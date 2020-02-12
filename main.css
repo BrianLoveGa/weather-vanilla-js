@@ -21,6 +21,9 @@ body {
     rgba(240, 0, 80, 0.9)
   );
 }
+.mid{
+  text-align: center;
+}
 
 header {
   display: flex;

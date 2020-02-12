@@ -4,10 +4,15 @@ const api = {
 };
 
 const searchbox = document.querySelector(".search-box");
+const button = document.querySelector(".click");
 searchbox.addEventListener("keypress", setQuery);
+button.addEventListener("click", setQuery);
 
 function setQuery(evt) {
   if (evt.keyCode == 13) {
+    getResults(searchbox.value);
+    console.log(searchbox.value);
+  } else {
     getResults(searchbox.value);
     console.log(searchbox.value);
   }
@@ -16,6 +21,7 @@ function setQuery(evt) {
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
     .then(weather => {
+      console.log(weather.json());
       return weather.json();
     })
     .then(displayResults);
@@ -37,7 +43,9 @@ function displayResults(weather) {
   weather_el.innerText = weather.weather[0].main;
 
   let hilow = document.querySelector(".hi-low");
-  hilow.innerText = `${Math.round(weather.main.temp_min)}°f / ${Math.round(weather.main.temp_max)}°f`;
+  hilow.innerText = `LOW ${Math.round(
+    weather.main.temp_min
+  )}°f / HIGH ${Math.round(weather.main.temp_max)}°f`;
 }
 
 function dateBuilder(d) {

@@ -1,15 +1,19 @@
 # weather-vanilla-js
-weather app using vanilla js
 
+weather app using vanilla js html and css
 
-<https://youtu.be/n4dtwWgRueI>
+Similiar to the ine I have on my simple over complex site
 
-a simple weather app from open weather map free api
+Weather app using [open weather map api](https://openweathermap.org/api)
 
+Simply type city name into search box
 
-type city name into search box and press enter
+and press enter or forecast me button.
 
-not mobile friendly due to require enter key
+So upon adding a button it has a kind of auto try when you are typing so it will fetch as you type.
 
-should add a button if not at keyboard
-maybe tomorrow
+Nothing like turning a bug into a feature.
+
+Enjoy the day regardless of the weather.
+
+🌅🌄☄⛈☁️⚡️☔️❄️🌤🌥🌦🌧🌨🌩🌫🌪🌀☀️⛅️
