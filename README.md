@@ -1,5 +1,7 @@
 # weather-vanilla-js
 
+[live site here](https://brianlovega.github.io/weather-vanilla-js/)
+
 weather app using vanilla js html and css
 
 Similiar to the ine I have on my simple over complex site
