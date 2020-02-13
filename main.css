@@ -97,15 +97,18 @@ main {
 .current .hi-low {
   color: #fff;
   font-size: 4em;
+  padding:10px;
   text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .current .windSpeed,
-.current .windGust{
-    color: #fff;
+.current .windGust,
+.current .press,
+.current .feels {
+  color: #fff;
   font-size: 2em;
   text-shadow: 0px 2px rgba(0, 0, 0, 0.3);
-
+  padding:5px;
 }
 .current .weather {
   font-style: italic;
@@ -118,6 +121,10 @@ main {
   background-color: lightblue;
   text-align: center;
   border-radius: 20px;
+}
+
+.fun{
+  margin:3% Auto;
 }
 
 .space {

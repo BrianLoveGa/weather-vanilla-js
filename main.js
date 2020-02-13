@@ -53,6 +53,12 @@ function displayResults(weather) {
 
   let windGusts = document.querySelector(".windGust");
   windGusts.innerText = ` Gusts @ ${weather.wind.gust}`;
+
+  let pressHumid = document.querySelector(".press");
+  pressHumid.innerText = ` pressure @ ${weather.main.pressure} millibars & humidity  @ ${weather.main.humidity} %`;
+
+  let feelsLike = document.querySelector(".feels");
+  feelsLike.innerText = ` Feels like ${weather.main.feels_like} °f`;
 }
 
 function dateBuilder(d) {
