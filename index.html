@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Easy weather app</title>
-    <link rel="stylesheet" href="main.css" >
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <div class="app-wrap">
-        <div class="mid">
+      <div class="mid">
         <h1>Brian's Weather App</h1>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          autocomplete="off"
+          class="search-box"
+          placeholder="Search for city ..."
+        />
+      </div>
+      <button class="click">Forecast Please</button>
+      <main>
+        <div class="location">
+          <div class="city">New York City, US</div>
+          <div class="date">Thursday 10 January 2020</div>
         </div>
-        <header>
-            <input type="text" autocomplete="off" class="search-box"
-            placeholder="Search for city ..." />
-        </header>
-         <button class="click">Forecast me</button>
-        <main>
-            <section class="location">
-                <div class="city">Northampton, GB</div>
-                <div class="date">Thursday 10 January 2020</div>
-            </section>
-            <div class="current">
-                <div class="temp"> 15 <span>°f</span></div>
-                <div class="weather">Sunny</div>
-                <div class="hi-low">13 °f / 16°f </div>
-            </div>
-        </main>
+        <div class="image">
+          <img
+            class="wthrPic"
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt="weather icon"
+          />
+        </div>
+        <div class="current">
+          <div class="temp">35 <span>°f</span></div>
+          <div class="weather">Rain</div>
+          <div class="description" > raining</div>
+
+          <div class="hi-low">23 °f / 38°f</div>
+          <div class="windSpeed"></div>
+          <div class="windGust"></div>
+        </div>
+      </main>
+      <div class="space"></div>
     </div>
 
     <script src="main.js"></script>
-    
-</body>
+  </body>
 </html>

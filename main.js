@@ -5,30 +5,25 @@ const api = {
 
 const searchbox = document.querySelector(".search-box");
 const button = document.querySelector(".click");
-searchbox.addEventListener("keypress", setQuery);
+
 button.addEventListener("click", setQuery);
 
-function setQuery(evt) {
-  if (evt.keyCode == 13) {
-    getResults(searchbox.value);
-    console.log(searchbox.value);
-  } else {
-    getResults(searchbox.value);
-    console.log(searchbox.value);
-  }
+function setQuery() {
+  getResults(searchbox.value);
+  console.log(searchbox.value);
 }
 
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
     .then(weather => {
-      // console.log(weather.json());
+      //console.log(weather.json());
       return weather.json();
     })
     .then(displayResults);
 }
 
 function displayResults(weather) {
-  // console.log(weather);
+  console.log(weather);
   let city = document.querySelector(".location .city");
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -36,16 +31,28 @@ function displayResults(weather) {
   let date = document.querySelector(".location .date");
   date.innerText = dateBuilder(now);
 
+  let pic = document.querySelector(".wthrPic");
+  pic.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+
   let temp = document.querySelector(".current .temp");
   temp.innerHTML = `${Math.round(weather.main.temp)}<span>°f</span>`;
 
   let weather_el = document.querySelector(".current .weather");
   weather_el.innerText = weather.weather[0].main;
 
+  let weather_desc = document.querySelector(".current .description");
+  weather_desc.innerText = weather.weather[0].description;
+
   let hilow = document.querySelector(".hi-low");
   hilow.innerText = `LOW ${Math.round(
     weather.main.temp_min
   )}°f / HIGH ${Math.round(weather.main.temp_max)}°f`;
+
+  let windSpeed = document.querySelector(".windSpeed");
+  windSpeed.innerText = ` wind speed at ${weather.wind.speed}  mph`;
+
+  let windGusts = document.querySelector(".windGust");
+  windGusts.innerText = ` Gusts @ ${weather.wind.gust}`;
 }
 
 function dateBuilder(d) {

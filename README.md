@@ -4,7 +4,7 @@
 
 weather app using vanilla js html and css
 
-Similiar to the ine I have on my simple over complex site
+Similiar to the one I have on my simple over complex site
 
 Weather app using [open weather map api](https://openweathermap.org/api)
 

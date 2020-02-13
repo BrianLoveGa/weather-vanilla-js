@@ -15,26 +15,36 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(100, 0, 20, 0.61),
-    rgba(199, 0, 40, 0.767),
-    rgba(240, 0, 80, 0.9)
+    rgba(120, 200, 253, 0.3),
+    rgba(0, 60, 100, 0.61),
+    rgba(24, 68, 201, 0.767),
+    rgba(44, 48, 252, 0.9)
   );
 }
-.mid{
+.mid {
   text-align: center;
+  padding: 20px;
 }
 
-header {
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 15px 15px;
+  padding: 15px;
 }
-
-header input {
+.click {
   width: 100%;
   max-width: 300px;
+  text-align: center;
+  padding: 10px;
+  align-self: center;
+  border-radius: 10px;
+  margin: 5px auto;
+  font-size: 1.1em;
+}
+.search input {
+  width: 100%;
+  max-width: 360px;
   padding: 20px;
   border: none;
   outline: none;
@@ -46,7 +56,7 @@ header input {
   transition: 0.2s ease-out;
 }
 
-header input:focus {
+.search input:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -75,7 +85,7 @@ main {
   color: skyblue;
   font-size: 7em;
   text-shadow: 4px 10px rgba(0, 0, 0, 0.7);
-  margin: 30px 0px;
+  margin: 10px 0px;
 }
 
 .current .temp span {
@@ -83,25 +93,33 @@ main {
 }
 
 .current .weather,
+.current .description,
 .current .hi-low {
   color: #fff;
   font-size: 4em;
-
-  margin-bottom: 15px;
   text-shadow: 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.current .windSpeed,
+.current .windGust{
+    color: #fff;
+  font-size: 2em;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.3);
+
 }
 .current .weather {
   font-style: italic;
 }
 
+.image {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  text-align: center;
+  border-radius: 20px;
+}
 
-
-.click{
-    width:28%;
-    text-align: center;
-    padding: 10px;
-    align-self: center;
-    border-radius: 10px;
-    margin:10px auto;
-    font-size: 1.1em;
+.space {
+  height: 200px;
 }
