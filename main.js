@@ -1,18 +1,25 @@
+/// I should hide this api key but front end security is not my strong point yet
+/// and it's a free account
+
+/// to get weather data for free
 const api = {
   key: "2416761b1a4e0e266b8e6bb58c037760",
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
+// the search box
 const searchbox = document.querySelector(".search-box");
-const buttonUS = document.querySelector(".click");
 
+// the f system button
+const buttonUS = document.querySelector(".click");
 buttonUS.addEventListener("click", setQuery);
 
 function setQuery() {
   getResults(searchbox.value);
+  getForecast(searchbox.value);
   console.log(searchbox.value);
 }
-
+// imperial in url for american units
 function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
     .then(weather => {
@@ -21,14 +28,16 @@ function getResults(query) {
     })
     .then(displayResults);
 }
-
+// the c system button (b/c life is about choices)
 const buttonIntl = document.querySelector(".klick");
 buttonIntl.addEventListener("click", goMetric);
 
 function goMetric() {
   getMetricResults(searchbox.value);
+  getMetricForecast(searchbox.value);
+  console.log(searchbox.value);
 }
-
+// metric in same url as above. And forecast instead of weather at bottom of page... I should reduce / refactor them more but they are working
 function getMetricResults(city) {
   fetch(`${api.base}weather?q=${city}&units=metric&APPID=${api.key}`)
     .then(weather => {
@@ -38,6 +47,7 @@ function getMetricResults(city) {
     .then(displayMetricResults);
 }
 
+/// dom manip - lets show some forecst
 function displayResults(weather) {
   console.log(weather);
   let city = document.querySelector(".location .city");
@@ -78,7 +88,7 @@ function displayResults(weather) {
 
   factSwap();
 }
-
+/// the same info with a c instead of f and a k instead of m .... or vice versa if you read this upside down...
 function displayMetricResults(weather) {
   console.log(weather);
   let city = document.querySelector(".location .city");
@@ -120,6 +130,10 @@ function displayMetricResults(weather) {
   factSwap();
 }
 
+/// since open weather api has such a lovely date format, let's make it more readable
+/// and tie it to the users computer with js built in date function
+// helper functions below
+
 function dateBuilder(d) {
   let months = [
     "January",
@@ -153,6 +167,9 @@ function dateBuilder(d) {
   return `${day} ${date} ${month} ${year}`;
 }
 
+// because who doesn't like math and fun facts?
+// in the middle of the weather page
+
 const funFacts = document.querySelector(".fact");
 
 const facts = [
@@ -174,3 +191,39 @@ function factSwap() {
   let n = Math.floor(Math.random() * 12);
   funFacts.innerText = facts[n];
 }
+
+/// forecast  / future weather below current
+
+// get functions - 'merican
+function getForecast(city) {
+  fetch(`${api.base}forecast?q=${city}&units=imperial&APPID=${api.key}`)
+    .then(forecast => {
+      return forecast.json();
+    })
+    .then(displayResultsForecast);
+}
+
+// get metric - not needed unless we try to figure out how to get high and low since data is so ugly
+// an array of 40 weather chunks - too much info for this little page
+// function getMetricForecast(city) {
+//   fetch(`${api.base}forecast?q=${city}&units=metric&APPID=${api.key}`)
+//     .then(forecast => {
+//       return forecast.json();
+//     })
+//     .then(displayMetricResultsForecast);
+// }
+
+
+// html elements to change
+// functions to make the changes
+function displayResultsForecast(forecast) {
+  console.log(forecast);
+  console.log(forecast.list);
+  let tomorrow = document.querySelector(".tomorrow");
+
+  tomorrow.innerText = `Tomorrow will be: ${forecast.list[6].weather[0].main}`;
+
+  let twoDays = document.querySelector(".twoDays");
+  twoDays.innerText = ` In two days it will be: ${forecast.list[15].weather[0].main}`
+}
+
