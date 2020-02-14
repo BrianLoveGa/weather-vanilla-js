@@ -133,6 +133,12 @@ main {
   margin: 3% Auto;
 }
 
+.fact {
+  font-size: 1.4em;
+  color:white;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+}
+
 .space {
   height: 200px;
 }
