@@ -14,17 +14,19 @@ If adding state you must add country too and use commas and no spaces
 (open weather api is picky, but free)
 
 city name,state,country code 2 digit
+
 examples that work:
-atlanta
-Atlanta,Ga,US
-new york
-chicago,il,us
-paris
-london
-ottowa
-tokoyo
-los angeles,ca,us
-Raliegh,nc,us
+
++ atlanta
++ Atlanta,Ga,US
++ new york
++ chicago,il,us
++ paris
++ london
++ ottowa
++ tokoyo
++ los angeles,ca,us
++ Raliegh,nc,us
 
 then press forecast me button for f or 
 weather now govenor for c weather info.
