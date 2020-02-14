@@ -33,8 +33,8 @@ const buttonIntl = document.querySelector(".klick");
 buttonIntl.addEventListener("click", goMetric);
 
 function goMetric() {
-  getMetricResults(searchbox.value);
-  getMetricForecast(searchbox.value);
+  getMetricResults(searchbox.value); /// maybe not the best way to swap units but it works
+  getForecast(searchbox.value); /// not using any digits so no need to swap this to metric
   console.log(searchbox.value);
 }
 // metric in same url as above. And forecast instead of weather at bottom of page... I should reduce / refactor them more but they are working
@@ -86,7 +86,7 @@ function displayResults(weather) {
   let feelsLike = document.querySelector(".feels");
   feelsLike.innerText = ` Feels like ${weather.main.feels_like} °f`;
 
-  factSwap();
+  factSwap(); // learning is fun!
 }
 /// the same info with a c instead of f and a k instead of m .... or vice versa if you read this upside down...
 function displayMetricResults(weather) {
@@ -127,7 +127,7 @@ function displayMetricResults(weather) {
   let feelsLike = document.querySelector(".feels");
   feelsLike.innerText = ` Feels like ${weather.main.feels_like} °c`;
 
-  factSwap();
+  factSwap(); // knowledge is power
 }
 
 /// since open weather api has such a lovely date format, let's make it more readable
