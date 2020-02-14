@@ -26,11 +26,9 @@ tokoyo
 los angeles,ca,us
 Raliegh,nc,us
 
-and press enter or forecast me button.
+then press forecast me button for f or 
+weather now govenor for c weather info.
 
-So upon adding a button it has a kind of auto try when you are typing so it will fetch as you type.
-
-Nothing like turning a bug into a feature.
 
 Enjoy the day regardless of the weather.
 
