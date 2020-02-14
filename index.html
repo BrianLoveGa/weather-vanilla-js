@@ -14,17 +14,24 @@
   <body>
     <div class="app-wrap">
       <div class="mid">
-        <h1>Brian's Weather App</h1>
+        <h1>Brian's International Weather App</h1>
+        <h2>Search by city name</h2>
+        <h3>or by city name,state,country</h3>
+        <h4>Use commas between city,state,country and no spaces</h4>
+        <h4>Just city,state or city, state will not work</h4>
+        <h4>EX: atlanta or Atlanta,ga,us or New York,NY,us</h4>
       </div>
       <div class="search">
         <input
           type="text"
           autocomplete="off"
           class="search-box"
-          placeholder="Search by city name..."
+          placeholder="City Only... or city,state,country code"
         />
       </div>
-      <button class="click">Forecast Please</button>
+      <button class="click">Forecast Please (in °f)</button>
+      <button class="klick">Weather now govenor (in °c)</button>
+
       <main>
         <div class="location">
           <div class="city">New York City, US</div>
@@ -48,7 +55,11 @@
           <div class="windGust"></div>
           <div class="press"></div>
           <h3 class="fun">
-            fun fact: the average pressure at sea level is 1013.25 millibars
+            fun fact:
+            <div class="fact">
+              The average pressure at sea level is 1013.25 millibars.
+            </div>
+            
           </h3>
         </div>
       </main>

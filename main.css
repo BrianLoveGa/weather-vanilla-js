@@ -32,7 +32,8 @@ body {
   align-items: center;
   padding: 15px;
 }
-.click {
+.click,
+.klick {
   width: 100%;
   max-width: 300px;
   text-align: center;
@@ -44,7 +45,7 @@ body {
 }
 .search input {
   width: 100%;
-  max-width: 360px;
+  max-width: 560px;
   padding: 20px;
   border: none;
   outline: none;
