@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: calc(1em + 1vw);
+}
+
 body {
   font-family: "montserrat", sans-serif;
   background-color: rgb(189, 184, 184);
