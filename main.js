@@ -1,6 +1,8 @@
 /// I should hide this api key but front end security is not my strong point yet
 /// and it's a free account
 
+/// and it's expired so no works no more
+
 /// to get weather data for free
 const api = {
   key: "2416761b1a4e0e266b8e6bb58c037760",
@@ -8,16 +10,19 @@ const api = {
 };
 
 // the search box
-const searchbox = document.querySelector(".search-box");
+let searchbox = document.querySelector(".search-box");
+let destination = searchbox.value;
+// let cleanSearch = destination.replace(/\s*,\s*/g, ",");
 
 // the f system button
 const buttonUS = document.querySelector(".click");
 buttonUS.addEventListener("click", setQuery);
 
 function setQuery() {
-  getResults(searchbox.value);
-  getForecast(searchbox.value);
-  console.log(searchbox.value);
+  getResults(destination);
+  getForecast(destination);
+  console.log("cleanSearch");
+  console.log(destination);
 }
 // imperial in url for american units
 function getResults(query) {
@@ -35,8 +40,11 @@ buttonIntl.addEventListener("click", goMetric);
 function goMetric() {
   getMetricResults(searchbox.value); /// maybe not the best way to swap units but it works
   getForecast(searchbox.value); /// not using any digits so no need to swap this to metric
+  console.log("searchbox.value");
   console.log(searchbox.value);
+  console.log("the city should be near me");
 }
+
 // metric in same url as above. And forecast instead of weather at bottom of page... I should reduce / refactor them more but they are working
 function getMetricResults(city) {
   fetch(`${api.base}weather?q=${city}&units=metric&APPID=${api.key}`)
